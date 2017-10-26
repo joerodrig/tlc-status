@@ -1,5 +1,5 @@
-.App {
-  text-align: center;
+body {
+  background-color: #eceff1;
 }
 
 .App-logo {
@@ -25,4 +25,54 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+.app-form {
+  text-align: center;
+}
+
+.app-form > input {
+  height: 42px;
+  width: 200px;
+  font-size: 34px;
+  text-align: center;
+}
+.tlc-application-container {
+  background-color: white;
+  border: 1px solid #cfd8dc;
+}
+
+.tlc-application-requirements {
+  margin-left: 12px;
+  margin-bottom: 12px;
+}
+
+.tlc-application-requirements > h2 {
+  margin-bottom: 0;
+}
+
+.tlc-application-times {
+  text-align: center;
+}
+
+.tlc-application-times > span {
+  padding: 12px;
+}
+
+.tlc-application-type {
+  font-size: 24px;
+  text-align: center;
+
+}
+
+.tlc-application-status {
+  text-align: center;
+  font-size: 32px;
+}
+
+@media only screen and (min-width: 768px) {
+  .tlc-application-container {
+    margin-left: 25%;
+    margin-right: 25%;
+  }
 }
