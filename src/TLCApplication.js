@@ -1,6 +1,6 @@
 import React from "react";
 
-const errorType = (error) => {
+const errorMessage = (error) => {
   if (error.code === "query.compiler.malformed") {
     return "The application number entered is invalid";
   } else if (error.code === "404") {
@@ -25,8 +25,8 @@ const completionCount = (application) => {
 const TLCApplication = ({application, error}) => {
   if (error) {
     return (
-      <div>
-
+      <div className="tlc-application-error">
+        {errorMessage(error)}
       </div>
     )
   }

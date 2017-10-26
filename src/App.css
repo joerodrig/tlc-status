@@ -51,6 +51,10 @@ body {
   margin-bottom: 0;
 }
 
+.tlc-application-error {
+  text-align: center;
+}
+
 .tlc-application-times {
   text-align: center;
 }
