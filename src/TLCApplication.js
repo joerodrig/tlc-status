@@ -30,6 +30,7 @@ const TLCApplication = ({application, error}) => {
       </div>
     )
   }
+  
   return (
     <div className="tlc-application-container">
       <div className="tlc-application-header">

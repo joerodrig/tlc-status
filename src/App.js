@@ -1,7 +1,7 @@
 import "whatwg-fetch";
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import logo from "./logo.svg";
+import "./App.css";
 import TLCApplication from "./TLCApplication";
 
 
@@ -33,6 +33,7 @@ class App extends Component {
     const baseUrl = "https://data.cityofnewyork.us/resource/xtra-f75s.json";
     const appNumberFilterParam = `app_no=${this.state.appNumber}`;
 
+    this.setState(() => ({ error: null, submitted: false }))
     return fetch(`${baseUrl}?${appNumberFilterParam}`, {
     method: "GET",
     body: {
