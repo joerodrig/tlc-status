@@ -29,9 +29,17 @@ class App extends Component {
     };
   }
 
-  _taxiInfo = () => {
+  componentWillMount() {
+    const hash = window.location.hash;
+    //"#{application_number: 5758825}"
+    const appNumber = hash.replace(/#?\{?\}?/g, "").split(": ")[1];
+    this._updateAppNumber(appNumber);
+    this._taxiInfo(appNumber);
+  }
+
+  _taxiInfo = (appNumber) => {
     const baseUrl = "https://data.cityofnewyork.us/resource/xtra-f75s.json";
-    const appNumberFilterParam = `app_no=${this.state.appNumber}`;
+    const appNumberFilterParam = `app_no=${this.state.appNumber || appNumber}`;
 
     this.setState(() => ({ error: null, submitted: false }))
     return fetch(`${baseUrl}?${appNumberFilterParam}`, {
