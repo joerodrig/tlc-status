@@ -38,8 +38,11 @@ class App extends Component {
   }
 
   _taxiInfo = (appNumber) => {
+    // Attempt to use the appNumber saved in state.
+    // If it's null, use a passed appNumber
+    const appNo = this.state.appNumber || appNumber;
     const baseUrl = "https://data.cityofnewyork.us/resource/xtra-f75s.json";
-    const appNumberFilterParam = `app_no=${this.state.appNumber || appNumber}`;
+    const appNumberFilterParam = `app_no=${appNo}`;
 
     this.setState(() => ({ error: null, submitted: false }))
     return fetch(`${baseUrl}?${appNumberFilterParam}`, {
@@ -53,6 +56,8 @@ class App extends Component {
       response.json().then(json => response.ok ? json : Promise.reject(json))
     )
     .then(response => {
+      window.location.hash = `#{application_number: ${appNo}}`;
+
       // If the response returns an empty array, the application wasn't found
       if (response.length === 0) {
         this.setState(() => ({ error: { code: "404" }, submitted: true }))
@@ -64,6 +69,10 @@ class App extends Component {
       this.setState(() => ({ application: response[0], submitted: true }))
     })
     .catch(response => {
+      if (response.errorCode === "query.soql.no-such-column") {
+        window.location.hash = "";
+      }
+
       this.setState(() => ({ error: response, submitted: true }))
     });
   }

@@ -1,10 +1,14 @@
 import React from "react";
 
 const errorMessage = (error) => {
-  if (error.code === "query.compiler.malformed") {
-    return "The application number entered is invalid";
-  } else if (error.code === "404") {
-    return "We were unable to find your application";
+  switch(error.code) {
+    case "query.soql.no-such-column":
+    case "query.compiler.malformed":
+      return "The application number entered is invalid";
+    case "404":
+      return "We were unable to find your application";
+    default:
+      return "There was an issue retrieving your application";
   }
 }
 
@@ -30,7 +34,7 @@ const TLCApplication = ({application, error}) => {
       </div>
     )
   }
-  
+
   return (
     <div className="tlc-application-container">
       <div className="tlc-application-header">
