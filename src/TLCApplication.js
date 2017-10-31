@@ -158,7 +158,7 @@ const TLCApplication = ({application, error, resetSearch}) => {
         </div>
         <div className="tlc-application-footer">
           <span className="tlc-application-footer--applied">Applied on {new Date(application.app_date).toISOString().slice(0,10)}</span>
-          <span className="tlc-application-footer--updated">Last Updated on {new Date(application.lastupdate).toISOString().slice(0,10)}</span>
+          <span className="tlc-application-footer--updated">Updated on {new Date(application.lastupdate).toISOString().slice(0,10)}</span>
         </div>
     </div>
   );
