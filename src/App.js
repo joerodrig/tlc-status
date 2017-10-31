@@ -33,8 +33,10 @@ class App extends Component {
     const hash = window.location.hash;
     //"#{application_number: 5758825}"
     const appNumber = hash.replace(/#?\{?\}?/g, "").split(": ")[1];
-    this._updateAppNumber(appNumber);
-    this._taxiInfo(appNumber);
+    if (appNumber) {
+      this._updateAppNumber(appNumber);
+      this._taxiInfo(appNumber);
+    }
   }
 
   _taxiInfo = (appNumber) => {
@@ -84,20 +86,35 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="app-form">
-          <h3>Application Number</h3>
-          <input
-            type="number"
-            defaultValue={this.state.appNumber}
-            onChange={(e) => this._updateAppNumber(e.target.value)}
-          />
-          <button onClick={() => this._taxiInfo()} type="submit">Search</button>
-        </div>
+        {(!this.state.submitted || this.state.error) &&
+          <div className="app-form">
+
+            <div className="app-form-fieldset">
+              <label className="app-form--label">Enter your application number</label>
+              <input
+                type="text"
+                className="app-form--input"
+                defaultValue={this.state.appNumber}
+                onChange={(e) => this._updateAppNumber(e.target.value)}
+              />
+            </div>
+            <button
+              className="app-form--submit"
+              onClick={() => this._taxiInfo()}
+              type="submit"
+            >
+              Search
+            </button>
+          </div>
+        }
 
         {this.state.submitted &&
           <TLCApplication
             application={this.state.application}
             error={this.state.error}
+            resetSearch={() => (
+              this.setState(() => ({ error: null, submitted: false, application: null }))
+            )}
           />
         }
       </div>
