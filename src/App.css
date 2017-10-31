@@ -3,19 +3,6 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-
 .app-form {
   margin-top: 7.25%;
   text-align: center;
@@ -40,7 +27,6 @@ body {
   }
 }
 
-
 .app-form-fieldset {
   margin-bottom: 12px;
 }
@@ -50,8 +36,6 @@ body {
   font-size: 32px;
   margin-bottom: 12px;
 }
-
-
 
 .app-form--submit {
   width: 75px;
@@ -95,12 +79,15 @@ body {
 
 .tlc-application-requirement--type {
   font-weight: 600;
+  font-size: 18px;
 }
 
 .tlc-application-requirement--status {
   display: block;
   font-weight: 400;
   font-style: italic;
+  font-size: 14px;
+  color: gray;
 }
 
 .tlc-application-error {
@@ -111,6 +98,13 @@ body {
 .tlc-application-footer {
   position: relative;
   padding-top: 12px;
+  margin: 12px 6px;
+}
+
+@media only screen and (min-width: 768px) {
+  .tlc-application-footer {
+    margin: 12px 7.25%;
+  }
 }
 
 .tlc-application-footer--applied {
@@ -119,7 +113,7 @@ body {
 
 .tlc-application-footer--updated {
   position: absolute;
-  right: 12px;
+  right: 0;
 }
 
 .tlc-application-header {

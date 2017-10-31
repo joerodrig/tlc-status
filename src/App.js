@@ -112,9 +112,10 @@ class App extends Component {
           <TLCApplication
             application={this.state.application}
             error={this.state.error}
-            resetSearch={() => (
-              this.setState(() => ({ error: null, submitted: false, application: null }))
-            )}
+            resetSearch={() => {
+              window.location.hash = "";
+              this.setState(() => ({appNumber: null, error: null, submitted: false, application: null }))
+            }}
           />
         }
       </div>
