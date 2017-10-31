@@ -95,6 +95,13 @@ class App extends Component {
                 type="text"
                 className="app-form--input"
                 defaultValue={this.state.appNumber}
+                onKeyPress={(e) => {
+                  // If enter is clicked in the input, try searching
+                  const k = e.keyCode ? e.keyCode : e.which;
+                  if (k === 13) {
+                    this._taxiInfo();
+                  }
+                }}
                 onChange={(e) => this._updateAppNumber(e.target.value)}
               />
             </div>
