@@ -91,7 +91,7 @@ class App extends Component {
             <div className="app-form-fieldset">
               <label className="app-form--label">Enter your application number</label>
               <div style={{marginBottom: "12px" }}>
-                <small>For more help, the <a href="http://www.nyc.gov/html/tlc/html/industry/new_driver_app_lookup.shtml">NYC New Driver Application Status</a> site</small>
+                <small>For help with your application, visit the <a href="http://www.nyc.gov/html/tlc/html/industry/new_driver_app_lookup.shtml">NYC New Driver Application Status</a> site</small>
               </div>
               <input
                 type="text"
