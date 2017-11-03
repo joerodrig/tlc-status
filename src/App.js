@@ -88,12 +88,16 @@ class App extends Component {
       <div className="App">
         {(!this.state.submitted || this.state.error) &&
           <div className="app-form">
-
             <div className="app-form-fieldset">
               <label className="app-form--label">Enter your application number</label>
+              <div style={{marginBottom: "12px" }}>
+                <small>For more help, the <a href="http://www.nyc.gov/html/tlc/html/industry/new_driver_app_lookup.shtml">NYC New Driver Application Status</a> site</small>
+              </div>
               <input
                 type="text"
                 className="app-form--input"
+                autoFocus
+                placeholder="5817306"
                 defaultValue={this.state.appNumber}
                 onKeyPress={(e) => {
                   // If enter is clicked in the input, try searching
@@ -114,7 +118,6 @@ class App extends Component {
             </button>
           </div>
         }
-
         {this.state.submitted &&
           <TLCApplication
             application={this.state.application}
