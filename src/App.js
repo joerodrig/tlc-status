@@ -39,7 +39,7 @@ class App extends Component {
     }
   }
 
-  _taxiInfo = (appNumber) => {
+  _taxiInfo = async(appNumber) => {
     // Attempt to use the appNumber saved in state.
     // If it's null, use a passed appNumber
     const appNo = this.state.appNumber || appNumber;
@@ -47,13 +47,12 @@ class App extends Component {
     const appNumberFilterParam = `app_no=${appNo}`;
 
     this.setState(() => ({ error: null, submitted: false }))
-    return fetch(`${baseUrl}?${appNumberFilterParam}`, {
-    method: "GET",
-    body: {
-      "$limit" : 2,
-      //"$$app_token" : "not necessary yet :)"
-    }
-  })
+    return await fetch(`${baseUrl}?${appNumberFilterParam}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
     .then(response =>
       response.json().then(json => response.ok ? json : Promise.reject(json))
     )
