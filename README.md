@@ -1,5 +1,5 @@
 # TLC NYC Application Status Checker
-[View the working demo](tlc-status.herokuapp.com)
+[View the working demo](https://tlc-status.herokuapp.com/)
 
 This app was created as an experiment for working with the [NYC Open Data API](https://data.cityofnewyork.us/Transportation/New-Driver-Application-Status/dpec-ucu7/data)
 
