@@ -1,8 +1,8 @@
 {
   "name": "tlc-status",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "private": true,
-
+  "license": "MIT",
   "dependencies": {
     "react-scripts": "1.0.14",
     "react": "^16.0.0",
