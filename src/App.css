@@ -113,11 +113,15 @@ body {
 
 .tlc-application-footer--applied {
   text-align: left;
+  font-size: .7em;
+  color: gray;
 }
 
 .tlc-application-footer--updated {
   position: absolute;
   right: 0;
+  font-size: .7em;
+  color: gray;
 }
 
 .tlc-application-header {
