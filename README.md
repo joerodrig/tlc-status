@@ -12,4 +12,5 @@ their application info
 To run this app locally,
 - Clone `https://github.com/joerodrig/tlc-status.git`
 - Navigate to the directory `cd /tlc-status`
-- Run the app `npm start`
+- Run `yarn` to install dependencies
+- Run the app `yarn start`
