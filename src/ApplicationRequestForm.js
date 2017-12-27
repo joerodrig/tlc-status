@@ -7,7 +7,7 @@ const ApplicationRequestForm = ({applicationNumber, fetchTaxiAppInfo, updateAppl
     <div className="app-form-fieldset">
       <label className="app-form--label">Enter your application number</label>
       <div style={{marginBottom: "12px" }}>
-        <small>For help with your application, visit the <a href="http://www.nyc.gov/html/tlc/html/industry/new_driver_app_lookup.shtml">NYC New Driver Application Status</a> site</small>
+        <p>For help with your application, visit the <a href="http://www.nyc.gov/html/tlc/html/industry/new_driver_app_lookup.shtml">NYC New Driver Application Status</a> site</p>
       </div>
       <input
         type="text"
