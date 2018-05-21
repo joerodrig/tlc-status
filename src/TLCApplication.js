@@ -6,8 +6,8 @@ import {
   medicalClearanceCopy,
   wavCopy
 } from "./lib/categories";
-
 import errors from "./lib/errors";
+import TLCApplicationFooter from "./TLCApplicationFooter";
 
 const completionCount = (application) => {
   const requirementKeys = [
@@ -92,17 +92,19 @@ const TLCApplication = ({application, error, resetSearch}) => {
         {
           requirements(application).map((r) => (
             <div key={r.type} className="tlc-application-requirement">
-              <p className="tlc-application-requirement--type">{r.type} <span className="tlc-application-requirement--status">{r.status}</span></p>
+              <p className="tlc-application-requirement--type">
+                {r.type} <span className="tlc-application-requirement--status">{r.status}</span>
+              </p>
               <p>{r.text}</p>
             </div>
             )
           )
         }
         </div>
-        <div className="tlc-application-footer">
-          <span className="tlc-application-footer--applied">Applied on {new Date(application.app_date).toISOString().slice(0,10)}</span>
-          <span className="tlc-application-footer--updated">Updated on {new Date(application.lastupdate).toISOString().slice(0,10)}</span>
-        </div>
+        <TLCApplicationFooter
+          appDate={application.app_date}
+          lastUpdate={application.lastupdate}
+        />
     </div>
   );
 }
