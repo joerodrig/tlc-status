@@ -120,32 +120,32 @@ body {
   color: gray;
 }
 
-.tlc-application-error {
+.tlc_application--error {
   text-align: center;
   white-space: pre;
   color: white;
   margin-top: 12px;
 }
 
-.tlc-application-footer {
+.tlc_application--footer {
   position: relative;
   padding-top: 12px;
   margin: 12px 6px;
 }
 
 @media only screen and (min-width: 768px) {
-  .tlc-application-footer {
+  .tlc_application--footer {
     margin: 12px 7.25%;
   }
 }
 
-.tlc-application-footer--applied {
+.tlc_application--footer-applied {
   text-align: left;
   font-size: .7em;
   color: gray;
 }
 
-.tlc-application-footer--updated {
+.tlc_application--footer-updated {
   position: absolute;
   right: 0;
   font-size: .7em;

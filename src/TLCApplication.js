@@ -64,7 +64,7 @@ const requirements = (application) => [
 const TLCApplication = ({application, error, resetSearch}) => {
   if (error) {
     return (
-      <div className="tlc-application-error">
+      <div className="tlc_application--error">
         {errors(error)}
       </div>
     )
