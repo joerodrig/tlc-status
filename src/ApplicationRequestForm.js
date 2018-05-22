@@ -13,7 +13,7 @@ const ApplicationRequestForm = ({applicationNumber, fetchTaxiAppInfo, updateAppl
         type="text"
         className="app-form--input"
         autoFocus
-        placeholder="5817306"
+        placeholder="5871101"
         defaultValue={applicationNumber}
         onKeyPress={(e) => {
           // If enter is clicked in the input, try searching
