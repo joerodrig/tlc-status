@@ -42,7 +42,7 @@ class App extends Component {
       response.json().then(json => response.ok ? json : Promise.reject(json))
     )
     .then(response => {
-      window.location.hash = `#{application_number: ${appNo}}`;
+      window.location.hash = `#{application_number:${appNo}}`;
 
       // If the response returns an empty array, the application wasn't found
       if (response.length === 0) {
